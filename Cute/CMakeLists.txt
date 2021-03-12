@@ -15,6 +15,7 @@ add_library(Cute STATIC
         # Testing
         source/Testing/ClearScene.cpp
         source/Testing/BoxScene.cpp
+        source/Testing/CameraScene.cpp
         )
 target_include_directories(Cute PUBLIC include)
 target_compile_options(Cute PRIVATE /W4 /WX /std:c++latest)

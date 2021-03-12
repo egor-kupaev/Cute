@@ -11,9 +11,13 @@
 #include <iostream>
 
 #include "Internal/DefaultScene.hpp"
+#include "Internal/GlobalTimer.hpp"
 
 namespace Cute::Engine
 {
+
+GLFWwindow * gWindow = nullptr;
+Timer gTimer(0.0f);
 
 int BasicEngine::doRun()
 {
@@ -26,6 +30,8 @@ int BasicEngine::doRun()
   {
     return -1;
   }
+
+  gTimer.Update(static_cast<float>(glfwGetTime()));
 
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
@@ -53,6 +59,8 @@ int BasicEngine::doRun()
     return -1;
   }
 
+  gWindow = window;
+
   if (!glGetError())
   {}
 
@@ -71,8 +79,11 @@ int BasicEngine::doRun()
   auto *currentScene = scenes_[currentSceneName].get();
   currentScene->Initialize();
 
+
   while (!glfwWindowShouldClose(window))
   {
+    gTimer.Update(static_cast<float>(glfwGetTime()));
+
     glfwPollEvents();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -88,8 +99,6 @@ int BasicEngine::doRun()
     }
 
     ImGui::Begin("Scene Selector");
-
-
 
     ImGui::Text("Select Scene to render");
 
@@ -113,7 +122,7 @@ int BasicEngine::doRun()
       }
       ImGui::EndListBox();
     }
-
+    ImGui::Text(" FPS: %.1f", ImGui::GetIO().Framerate);
     ImGui::End();
 
     ImGui::Render();

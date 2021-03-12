@@ -10,6 +10,7 @@
 #include <Cute/Graphics/Transform/Projection.hpp>
 
 #include <memory>
+#include <Cute/Graphics/Camera/Camera.hpp>
 
 namespace Cute::Testing
 {
@@ -20,18 +21,18 @@ class BoxScene : public Cute::Engine::Scene
 
   ~BoxScene() override = default;
 
- private:
+ protected:
   void doRender() override;
 
   void doInitialize() override;
 
   void doFinalize() override;
 
- private:
+ protected:
   std::unique_ptr<Cute::Graphics::Box> boxShape_;
   std::unique_ptr<Cute::Graphics::Shader> boxShader_;
   std::unique_ptr<Cute::Graphics::Model> model_;
-  std::unique_ptr<Cute::Graphics::View> view_;
+  std::unique_ptr<Cute::Graphics::Camera> camera_;
   std::unique_ptr<Cute::Graphics::Projection> projection_;
   glm::vec3 backgroundColor_;
   bool EnableMatrixWindow = false;

@@ -26,7 +26,7 @@ void BoxScene::doRender()
   const auto PlusPi = glm::pi<float>();
   const auto MinusPi = -glm::pi<float>();
   const auto model = model_->toMatrix();
-  const auto view = view_->toMatrix();
+  const auto view = camera_->toMatrix();
   const auto projection = projection_->toMatrix();
   const auto mvp = projection * view * model;
 
@@ -75,11 +75,12 @@ void BoxScene::doInitialize()
   boxShape_ = std::make_unique<Cute::Graphics::Box>();
   boxShader_ = std::make_unique<Cute::Graphics::Shader>(vShaderPath, fShaderPath);
   model_ = std::make_unique<Cute::Graphics::Model>();
-  view_ = std::make_unique<Cute::Graphics::View>();
+  camera_ = std::make_unique<Cute::Graphics::Camera>();
   projection_ = std::make_unique<Cute::Graphics::Projection>();
-
-  view_->Set({-1.0f, 1.0f, 2.f}, {0.0f, 0.0f, 0.0f});
   backgroundColor_ = {0.0f, 0.0f, 0.0f};
+
+  camera_->setPosition({-1.0f, 1.0f, 2.f});
+  camera_->lookAt({0.0f, 0.0f, 0.0f});
 }
 
 void BoxScene::doFinalize()
@@ -87,7 +88,7 @@ void BoxScene::doFinalize()
   boxShape_.reset();
   boxShader_.reset();
   model_.reset();
-  view_.reset();
+  camera_.reset();
   projection_.reset();
 }
 }

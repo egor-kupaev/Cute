@@ -27,7 +27,7 @@ class Scene
     doRender();
   }
 
- private:
+ protected:
   virtual void doRender() = 0;
   virtual void doInitialize() = 0;
   virtual void doFinalize() = 0;
