@@ -1,10 +1,10 @@
 #ifndef CUTE_GRAPHICS_SHAPES_BASIC_SHAPE_HPP
 #define CUTE_GRAPHICS_SHAPES_BASIC_SHAPE_HPP
 
-#include <Cute/Graphics/Shapes/Shape.hpp>
+#include <cute/graphics/shapes/shape.hpp>
 
-#include <Cute/Graphics/Vertices/VertexArray.hpp>
-#include <Cute/Graphics/Vertices/VertexBuffer.hpp>
+#include <cute/graphics/vertices/vertex_array.hpp>
+#include <cute/graphics/vertices/vertex_buffer.hpp>
 
 namespace Cute::Graphics
 {

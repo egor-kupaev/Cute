@@ -7,13 +7,20 @@ namespace Cute::Graphics
 {
 struct DataType
 {
-  struct FloatTag {
+  struct FloatTag
+  {
     explicit operator int();
-    static constexpr size_t Size() { return sizeof(float); }
+
+    static constexpr size_t Size()
+    { return sizeof(float); }
   };
-  struct UIntTag {
+
+  struct UIntTag
+  {
     explicit operator int();
-    static constexpr size_t Size() { return sizeof(unsigned); }
+
+    static constexpr size_t Size()
+    { return sizeof(unsigned); }
   };
 
   static constexpr auto Float = FloatTag();
@@ -22,7 +29,7 @@ struct DataType
   static unsigned SizeOf(int value);
 };
 
-template <typename T>
+template<typename T>
 concept IsDataType = std::same_as<T, DataType::FloatTag> || std::same_as<T, DataType::UIntTag>;
 }
 

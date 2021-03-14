@@ -1,7 +1,8 @@
 #ifndef CUTE_ENGINE_MAKE_ENGINE_HPP
 #define CUTE_ENGINE_MAKE_ENGINE_HPP
 
-#include <Cute/Engine/BasicEngine.hpp>
+#include <cute/engine/basic_engine.hpp>
+#include <memory>
 
 namespace Cute::Engine
 {

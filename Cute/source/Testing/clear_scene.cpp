@@ -1,7 +1,7 @@
-#include <Cute/Testing/ClearScene.hpp>
+#include <cute/testing/clear_scene.hpp>
 #include <imgui.h>
 
-#include "../Internal/GlWrappers.hpp"
+#include "../internal/GlWrappers.hpp"
 
 namespace Cute::Testing
 {

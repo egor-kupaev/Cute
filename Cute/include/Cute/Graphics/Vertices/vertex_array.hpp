@@ -1,7 +1,7 @@
 #ifndef CUTE_GRAPHICS_VERTICES_VERTEX_ARRAY_HPP
 #define CUTE_GRAPHICS_VERTICES_VERTEX_ARRAY_HPP
 
-#include <Cute/Graphics/Vertices/DataType.hpp>
+#include <cute/graphics/vertices/data_type.hpp>
 
 #include <vector>
 
@@ -11,13 +11,18 @@ namespace Cute::Graphics
 class Layout
 {
  public:
-  template <IsDataType DataTypeT>
+  template<IsDataType DataTypeT>
   Layout(DataTypeT dataType, size_t count): type(dataType), count(int(count))
   {}
 
-  [[nodiscard]] auto GetCount() const { return count; }
-  [[nodiscard]] auto GetType() const { return type; }
-  [[nodiscard]] auto GetSize() const { return DataType::SizeOf(type); }
+  [[nodiscard]] auto GetCount() const
+  { return count; }
+
+  [[nodiscard]] auto GetType() const
+  { return type; }
+
+  [[nodiscard]] auto GetSize() const
+  { return DataType::SizeOf(type); }
 
  private:
   int type;
@@ -28,9 +33,10 @@ class VertexArray
 {
  public:
   VertexArray();
+
   ~VertexArray();
 
-  VertexArray(VertexArray&& other) noexcept : id_(other.id_)
+  VertexArray(VertexArray &&other) noexcept: id_(other.id_)
   {
     other.id_ = 0;
   }

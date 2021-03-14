@@ -1,7 +1,7 @@
-#include <Cute/Engine/MakeEngine.hpp>
-#include <Cute/Testing/ClearScene.hpp>
-#include <Cute/Testing/BoxScene.hpp>
-#include <Cute/Testing/CameraScene.hpp>
+#include <cute/engine/make_engine.hpp>
+#include <cute/testing/clear_scene.hpp>
+#include <cute/testing/box_scene.hpp>
+#include <cute/testing/camera_scene.hpp>
 
 int main()
 {

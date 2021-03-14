@@ -1,8 +1,6 @@
 #ifndef CUTE_GRAPHICS_CAMERA_CAMERA_HPP_
 #define CUTE_GRAPHICS_CAMERA_CAMERA_HPP_
 
-#include <Cute/Graphics/Transform/View.hpp>
-
 namespace Cute::Graphics
 {
 class Camera

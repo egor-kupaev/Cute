@@ -1,7 +1,7 @@
 #ifndef CUTE_ENGINE_ENGINE_HPP
 #define CUTE_ENGINE_ENGINE_HPP
 
-#include <Cute/Engine/Scene.hpp>
+#include <cute/engine/scene.hpp>
 
 #include <memory>
 #include <string>
@@ -13,6 +13,7 @@ class Engine
 {
  public:
   Engine() = default;
+
   virtual ~Engine() = default;
 
  public:
@@ -23,21 +24,22 @@ class Engine
       return doRun();
 
     }
-    catch (std::exception& ex)
+    catch (std::exception &ex)
     {
       std::cerr << ex.what() << std::endl;
       return -1;
     }
   }
 
-  void addScene(const std::string& name, std::unique_ptr<Scene>&& scene)
+  void addScene(const std::string &name, std::unique_ptr<Scene> &&scene)
   {
     doAddScene(name, std::move(scene));
   }
 
  private:
   virtual int doRun() = 0;
-  virtual void doAddScene(const std::string& name, std::unique_ptr<Scene>&& scene) = 0;
+
+  virtual void doAddScene(const std::string &name, std::unique_ptr<Scene> &&scene) = 0;
 };
 }
 

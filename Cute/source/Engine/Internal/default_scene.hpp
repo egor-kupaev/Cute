@@ -1,9 +1,9 @@
 #ifndef CUTE_SOURCES_ENGINE_INTERNAL_DEFAULT_SCENE_HPP
 #define CUTE_SOURCES_ENGINE_INTERNAL_DEFAULT_SCENE_HPP
 
-#include <Cute/Engine/Scene.hpp>
+#include <cute/engine/scene.hpp>
 
-#include "../Internal/GlWrappers.hpp"
+#include "../internal/GlWrappers.hpp"
 
 namespace Cute::Engine::Internal
 {

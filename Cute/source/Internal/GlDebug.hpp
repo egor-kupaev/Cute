@@ -67,7 +67,7 @@ static inline auto CheckForError(std::string msg)
     return;
   } else
   {
-    for (auto& error_code : error_codes)
+    for (auto &error_code : error_codes)
     {
       msg += "\t";
       msg += error_code;

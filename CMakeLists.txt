@@ -15,7 +15,7 @@ include(cmake/fetch_imgui.cmake)
 include(cmake/fetch_stb_image.cmake)
 
 # Cute
-add_subdirectory(Cute)
+add_subdirectory(cute)
 
 # Test
 add_executable(Test main.cpp)

@@ -8,7 +8,8 @@ namespace Cute::Testing
 class ClearScene : public Cute::Engine::Scene
 {
  public:
-  ClearScene(): colors_{0.0f, 0.0f, 0.0f} {}
+  ClearScene() : colors_{0.0f, 0.0f, 0.0f}
+  {}
 
   ~ClearScene() override = default;
 

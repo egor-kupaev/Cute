@@ -3,26 +3,27 @@
 
 namespace Cute::Engine
 {
-  class Timer
+class Timer
+{
+ public:
+  explicit Timer(float timestamp) noexcept: _currentTimestamp(timestamp), _lastTimestamp(timestamp)
+  {}
+
+  auto Update(float timestamp)
   {
-   public:
-    explicit Timer(float timestamp) noexcept: _currentTimestamp(timestamp), _lastTimestamp(timestamp) {}
+    _lastTimestamp = _currentTimestamp;
+    _currentTimestamp = timestamp;
+  }
 
-    auto Update(float timestamp)
-    {
-      _lastTimestamp = _currentTimestamp;
-      _currentTimestamp = timestamp;
-    }
+  auto Delta() const
+  {
+    return _currentTimestamp - _lastTimestamp;
+  }
 
-    auto Delta()
-    {
-      return _currentTimestamp - _lastTimestamp;
-    }
-
-   private:
-    float _currentTimestamp;
-    float _lastTimestamp;
-  };
+ private:
+  float _currentTimestamp;
+  float _lastTimestamp;
+};
 };
 
 #endif //CUTE_ENGINE_TIMER_HPP

@@ -1,4 +1,4 @@
-#include <Cute/Engine/BasicEngine.hpp>
+#include <cute/engine/basic_engine.hpp>
 
 #include <GL/glew.h>
 #include <gl/GL.h>
@@ -10,13 +10,13 @@
 
 #include <iostream>
 
-#include "Internal/DefaultScene.hpp"
-#include "Internal/GlobalTimer.hpp"
+#include "internal/default_scene.hpp"
+#include "internal/global_timer.hpp"
 
 namespace Cute::Engine
 {
 
-GLFWwindow * gWindow = nullptr;
+GLFWwindow *gWindow = nullptr;
 Timer gTimer(0.0f);
 
 int BasicEngine::doRun()
@@ -47,8 +47,9 @@ int BasicEngine::doRun()
   glfwMakeContextCurrent(window);
   glfwSwapInterval(1);
 
-  glfwSetFramebufferSizeCallback(window, [](auto, int x, int y) {
-    glViewport( 0, 0, x, y);
+  glfwSetFramebufferSizeCallback(window, [](auto, int x, int y)
+  {
+    glViewport(0, 0, x, y);
   });
   glfwSetWindowAspectRatio(window, 16, 9);
 
@@ -78,7 +79,6 @@ int BasicEngine::doRun()
   std::string currentSceneName = "Default";
   auto *currentScene = scenes_[currentSceneName].get();
   currentScene->Initialize();
-
 
   while (!glfwWindowShouldClose(window))
   {

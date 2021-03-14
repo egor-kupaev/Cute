@@ -1,14 +1,15 @@
 #ifndef CUTE_GRAPHICS_SHAPES_BOX_HPP
 #define CUTE_GRAPHICS_SHAPES_BOX_HPP
 
-#include <Cute/Graphics/Shapes/BasicShape.hpp>
+#include <cute/graphics/shapes/basic_shape.hpp>
 
 namespace Cute::Graphics
 {
-class Box: public BasicShape
+class Box : public BasicShape
 {
  public:
   Box();
+
   ~Box() override = default;
 
  protected:

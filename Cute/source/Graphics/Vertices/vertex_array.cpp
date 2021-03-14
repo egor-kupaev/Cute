@@ -1,11 +1,11 @@
-#include <Cute/Graphics/Vertices/VertexArray.hpp>
+#include <cute/graphics/vertices/vertex_array.hpp>
 
 #include <GL/glew.h>
 #include <vector>
 #include <algorithm>
 #include <numeric>
 
-#include "../../Internal/GlWrappers.hpp"
+#include "../../internal/GlWrappers.hpp"
 
 namespace Cute::Graphics
 {
@@ -22,7 +22,7 @@ VertexArray::~VertexArray()
 void VertexArray::AddLayouts(const std::vector<Layout> &layouts)
 {
   auto stride = 0u;
-  for (const auto& layout : layouts)
+  for (const auto &layout : layouts)
   {
     stride += layout.GetSize() * layout.GetCount();
   }

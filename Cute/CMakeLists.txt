@@ -1,21 +1,21 @@
 add_library(Cute STATIC
         # Engine
-        source/Engine/BasicEngine.cpp
+        source/engine/basic_engine.cpp
 
         # Graphics
-            # Shapes
-            source/Graphics/Shapes/Box.cpp
-            # Shaders
-            source/Graphics/Shaders/Shader.cpp
-            # Vertices
-            source/Graphics/Vertices/VertexBuffer.cpp
-            source/Graphics/Vertices/VertexArray.cpp
-            source/Graphics/Vertices/DataType.cpp
+        # Shapes
+        source/graphics/shapes/box.cpp
+        # Shaders
+        source/graphics/shaders/shader.cpp
+        # Vertices
+        source/graphics/vertices/vertex_buffer.cpp
+        source/graphics/vertices/vertex_array.cpp
+        source/graphics/vertices/data_type.cpp
 
         # Testing
-        source/Testing/ClearScene.cpp
-        source/Testing/BoxScene.cpp
-        source/Testing/CameraScene.cpp
+        source/testing/clear_scene.cpp
+        source/testing/box_scene.cpp
+        source/testing/camera_scene.cpp
         )
 target_include_directories(Cute PUBLIC include)
 target_compile_options(Cute PRIVATE /W4 /WX /std:c++latest)

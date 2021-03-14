@@ -1,14 +1,13 @@
-#include <Cute/Graphics/Shaders/Shader.hpp>
+#include <cute/graphics/shaders/shader.hpp>
 #include <fstream>
 #include <vector>
 
-#include "../../Internal/GlWrappers.hpp"
-
+#include "../../internal/GlWrappers.hpp"
 
 namespace Cute::Graphics
 {
 
-static std::vector<char> ParseFile(const std::string& path)
+static std::vector<char> ParseFile(const std::string &path)
 {
   auto is = std::ifstream(path, std::ios::binary | std::ios::ate);
 
@@ -22,7 +21,7 @@ static std::vector<char> ParseFile(const std::string& path)
   return result;
 }
 
-Shader::Shader(const std::string& vShaderPath, const std::string& fShaderPath): id_()
+Shader::Shader(const std::string &vShaderPath, const std::string &fShaderPath) : id_()
 {
   auto vShaderId = Gl::CreateShader(GL_VERTEX_SHADER);
   auto vShaderSource = ParseFile(vShaderPath);
@@ -33,7 +32,6 @@ Shader::Shader(const std::string& vShaderPath, const std::string& fShaderPath): 
   auto fShaderSource = ParseFile(fShaderPath);
   Gl::SetShaderSource(fShaderId, fShaderSource.data());
   Gl::CompileShader(fShaderId);
-
 
   id_ = Gl::CreateProgram();
   Gl::AttachShader(id_, vShaderId);
@@ -55,31 +53,31 @@ Shader::~Shader()
   Gl::DeleteProgram(id_);
 }
 
-void Shader::SetUniform(const std::string& path, const int i) const
+void Shader::SetUniform(const std::string &path, const int i) const
 {
   auto location = Gl::GetUniformLocation(id_, path.c_str());
   Gl::Uniform1i(location, i);
 }
 
-void Shader::SetUniform(const std::string& path, const float f) const
+void Shader::SetUniform(const std::string &path, const float f) const
 {
   auto location = Gl::GetUniformLocation(id_, path.c_str());
   Gl::Uniform1f(location, f);
 }
 
-void Shader::SetUniform(const std::string& path, const glm::mat4& mat_4) const
+void Shader::SetUniform(const std::string &path, const glm::mat4 &mat_4) const
 {
   auto location = Gl::GetUniformLocation(id_, path.c_str());
   Gl::UniformMatrix4fv(location, glm::value_ptr(mat_4));
 }
 
-void Shader::SetUniform(const std::string& path, const glm::mat3& mat_3) const
+void Shader::SetUniform(const std::string &path, const glm::mat3 &mat_3) const
 {
   auto location = Gl::GetUniformLocation(id_, path.c_str());
   Gl::UniformMatrix3fv(location, glm::value_ptr(mat_3));
 }
 
-void Shader::SetUniform(const std::string& path, const glm::vec3& vec_3) const
+void Shader::SetUniform(const std::string &path, const glm::vec3 &vec_3) const
 {
   auto location = Gl::GetUniformLocation(id_, path.c_str());
   Gl::Uniform3f(location, vec_3.x, vec_3.y, vec_3.z);

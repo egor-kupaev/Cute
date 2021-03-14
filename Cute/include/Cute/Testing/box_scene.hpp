@@ -1,16 +1,15 @@
 #ifndef CUTE_TESTING_BOX_SCENE_HPP
 #define CUTE_TESTING_BOX_SCENE_HPP
 
-#include <Cute/Engine/Scene.hpp>
+#include <cute/engine/scene.hpp>
 
-#include <Cute/Graphics/Shapes/Box.hpp>
-#include <Cute/Graphics/Shaders/Shader.hpp>
-#include <Cute/Graphics/Transform/Model.hpp>
-#include <Cute/Graphics/Transform/View.hpp>
-#include <Cute/Graphics/Transform/Projection.hpp>
+#include <cute/graphics/shapes/box.hpp>
+#include <cute/graphics/shaders/shader.hpp>
+#include <cute/graphics/transform/model.hpp>
+#include <cute/graphics/transform/projection.hpp>
 
 #include <memory>
-#include <Cute/Graphics/Camera/Camera.hpp>
+#include <cute/graphics/camera/camera.hpp>
 
 namespace Cute::Testing
 {

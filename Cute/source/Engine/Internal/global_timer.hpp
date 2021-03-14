@@ -5,7 +5,7 @@
 
 namespace Cute::Engine
 {
-  extern Timer gTimer;
+extern Timer gTimer;
 }
 
 #endif //CUTE_SOURCES_ENGINE_INTERNAL_GLOBAL_TIME_HPP

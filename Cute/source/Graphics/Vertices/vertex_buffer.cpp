@@ -1,6 +1,6 @@
-#include <Cute/Graphics/Vertices/VertexBuffer.hpp>
+#include <cute/graphics/vertices/vertex_buffer.hpp>
 
-#include "../../Internal/GlWrappers.hpp"
+#include "../../internal/GlWrappers.hpp"
 
 namespace Cute::Graphics
 {

@@ -1,23 +1,22 @@
-#include <Cute/Testing/BoxScene.hpp>
+#include <cute/testing/box_scene.hpp>
 
-#include "../Internal/GlWrappers.hpp"
+#include "../internal/GlWrappers.hpp"
 
-#include <Cute/Graphics/Shapes/Box.hpp>
-#include <Cute/Graphics/Shaders/Shader.hpp>
-#include <Cute/Graphics/Transform/Model.hpp>
-#include <Cute/Graphics/Transform/View.hpp>
-#include <Cute/Graphics/Transform/Projection.hpp>
+#include <cute/graphics/shapes/box.hpp>
+#include <cute/graphics/shaders/shader.hpp>
+#include <cute/graphics/transform/model.hpp>
+#include <cute/graphics/transform/projection.hpp>
 #include <imgui.h>
 
 namespace Cute::Testing
 {
 
-static auto PrintMatrix4x4(const std::string& name, const glm::mat4& mat4)
+static auto PrintMatrix4x4(const std::string &name, const glm::mat4 &mat4)
 {
   ImGui::Text("%s", name.c_str());
   for (auto i = 0; i < 4; ++i)
   {
-      ImGui::Text("| %+.3f %+.3f %+.3f %+.3f |\n", mat4[0][i], mat4[1][i], mat4[2][i], mat4[3][i]);
+    ImGui::Text("| %+.3f %+.3f %+.3f %+.3f |\n", mat4[0][i], mat4[1][i], mat4[2][i], mat4[3][i]);
   }
 }
 
@@ -37,7 +36,7 @@ void BoxScene::doRender()
   }
   if (ImGui::Button("Open MatrixView"))
   {
-     EnableMatrixWindow = true;
+    EnableMatrixWindow = true;
   }
 
   if (ImGui::Begin("MatrixView", &EnableMatrixWindow))

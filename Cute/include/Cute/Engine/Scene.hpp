@@ -1,14 +1,13 @@
 #ifndef CUTE_ENGINE_SCENE_HPP
 #define CUTE_ENGINE_SCENE_HPP
 
-#include <Cute/Engine/Model.hpp>
-
 namespace Cute::Engine
 {
 class Scene
 {
  public:
   Scene() = default;
+
   virtual ~Scene() = default;
 
  public:
@@ -29,7 +28,9 @@ class Scene
 
  protected:
   virtual void doRender() = 0;
+
   virtual void doInitialize() = 0;
+
   virtual void doFinalize() = 0;
 };
 }

@@ -1,7 +1,7 @@
-#include <Cute/Testing/CameraScene.hpp>
+#include <cute/testing/camera_scene.hpp>
 
-#include "../Internal/GlWrappers.hpp"
-#include "../Engine/Internal/GlobalTimer.hpp"
+#include "../internal/GlWrappers.hpp"
+#include "../engine/internal/global_timer.hpp"
 
 #include <GLFW/glfw3.h>
 
@@ -9,7 +9,7 @@
 
 namespace Cute::Engine
 {
-extern GLFWwindow* gWindow;
+extern GLFWwindow *gWindow;
 }
 
 namespace Cute::Testing
@@ -19,7 +19,7 @@ static auto lastX = 0.0f;
 static auto currentY = 0.0f;
 static auto lastY = 0.0f;
 
-static auto ProcessInput(Cute::Graphics::Camera& camera)
+static auto ProcessInput(Cute::Graphics::Camera &camera)
 {
   auto dt = Engine::gTimer.Delta();
 
@@ -33,7 +33,7 @@ static auto ProcessInput(Cute::Graphics::Camera& camera)
     camera.MoveRight(dt);
 }
 
-static auto MouseCallback(GLFWwindow*, double x, double y)
+static auto MouseCallback(GLFWwindow *, double x, double y)
 {
   currentX = static_cast<float>(x);
   currentY = static_cast<float>(y);

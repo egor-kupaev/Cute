@@ -1,8 +1,8 @@
 #ifndef CUTE_TESTING_CAMERA_SCENE_HPP
 #define CUTE_TESTING_CAMERA_SCENE_HPP
 
-#include <Cute/Testing/BoxScene.hpp>
-#include <Cute/Graphics/Camera/Camera.hpp>
+#include <cute/testing/box_scene.hpp>
+#include <cute/graphics/camera/camera.hpp>
 
 #include <memory>
 

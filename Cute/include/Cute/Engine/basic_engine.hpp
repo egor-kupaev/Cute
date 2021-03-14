@@ -1,15 +1,16 @@
 #ifndef CUTE_ENGINE_BASIC_ENGINE_HPP
 #define CUTE_ENGINE_BASIC_ENGINE_HPP
 
-#include <Cute/Engine/Engine.hpp>
+#include <cute/engine/engine.hpp>
 #include <unordered_map>
 
 namespace Cute::Engine
 {
-class BasicEngine: public Engine
+class BasicEngine : public Engine
 {
  public:
   BasicEngine();
+
   ~BasicEngine() override = default;
 
  private:

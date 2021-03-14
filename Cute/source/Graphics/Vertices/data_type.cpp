@@ -1,4 +1,4 @@
-#include <Cute/Graphics/Vertices/DataType.hpp>
+#include <cute/graphics/vertices/data_type.hpp>
 
 #include <GL/glew.h>
 #include <stdexcept>
